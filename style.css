@@ -12,6 +12,7 @@ a,
 ul,
 li {
   text-decoration: none;
+  font-size: 20px
 }
 
 ul {
@@ -38,7 +39,7 @@ header {
   padding: 1rem;
 }
 
-.nav-site {
+.nav-lista {
   display: flex;
   padding: 2rem;
   gap: 1.5rem;
@@ -68,53 +69,100 @@ header {
   transform-origin: bottom left;
 }
 
-.search-wrapper {
-  width: 50px;
-  height: 50px;
+.container-wrapper {
+  background-color: #7c272c;
   display: flex;
-  border-radius: 4rem;
-  background: #7c272c;
   align-items: center;
-  justify-content: center;
-  outline: none;
-  overflow: hidden;
-  transition: 400ms ease-in-out;
-  position: relative;
-}
-.active {
-  width: 350px;
 }
 
-.search-wrapper input {
+.input-wrapper {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 60px;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.input-wrapper .input {
+  display: flex;
+  position: relative;
+  height: 60px;
+  width: 300px;
+  left: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-wrapper input {
   position: absolute;
   top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  margin-left: 40px;
-  margin-right: 2px;
-  outline: none;
+  background-color: transparent;
   border: none;
-  font-size: 1.2rem;
-  box-sizing: border-box;
+  outline: none;
+  font-size: 20px;
+  padding: 10px 0;
 }
 
-.search-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
+.input-wrapper input:focus-visible {
+  outline: none;
+}
+
+.input-wrapper.active {
+  width: 360px;
+  background-color: #fff;
+}
+
+svg {
+  padding: 12px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
   cursor: pointer;
-  background-image: url(./img/lupa.svg);
   background-color: #7c272c;
-  margin-left: auto;
-  z-index: 1;
+  position: absolute;
+  right: -2px;
+  top: 48%;
+  transform: translateY(-50%);
 }
 
-.search-btn i {
-  color: #7c272c;
-  font-size: 1rem;
+@media (max-width: 2000px) and (max-width: 1200px) {
+  .logo-inicial {
+    width: 130px;
+    margin: auto;
+    padding: 0.5rem;
+  }
+  .input-wrapper {
+    width: 40px;
+    height: 40px;
+  }
+  .input-wrapper .input {
+    height: 40px;
+    width: 150px;
+    left: 30px;
+  }
+  .input-wrapper.active {
+    width: 180px;
+  }
+  svg {
+    padding: 8px;
+    height: 30px;
+    width: 30px;
+  }
+}
+
+@media (max-width: 960px) {
+  header, .logo-inicial {
+    justify-content: start;
+  }
+  .logo-inicial {
+    width: 120px;
+    margin: 10px;
+  }
+  .nav-site {
+    display: none;
+  }
 }
