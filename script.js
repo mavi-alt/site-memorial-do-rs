@@ -14,7 +14,6 @@ const menu = document.getElementById("menu");
 hamburgerBtn.classList.add("hamburger-btn-js-enabled");
 
 function closeMenu() {
-    console.log(this);
     hamburgerBtn.setAttribute("aria-expanded", "false");
     menu.setAttribute("aria-hidden", "true");
     menu.classList.add("menu-closed");
