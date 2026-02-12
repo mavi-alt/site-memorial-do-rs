@@ -1,0 +1,370 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #7c272c;
+  padding: 0 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.logo-inicial {
+  width: 150px;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+/* Navegação */
+
+.nav-site {
+  position: static;
+}
+
+.nav-lista {
+  justify-content: center;
+}
+
+.item a {
+  padding: 10px;
+  display: inline-block;
+}
+
+.input-wrapper input {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  border-radius: 60px;
+  outline: none;
+  font-size: 20px;
+}
+
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+  position: relative;
+  margin-right: 10px;
+}
+
+.hamburger-btn .menu-icon {
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  margin: 6px 0;
+  transition: 0.4s;
+  border-radius: 2px;
+}
+
+.hamburger-btn[aria-expanded="false"] .icon::before {
+  content: "\2630";
+}
+
+.hamburger-btn[aria-expanded="true"] .icon::before {
+  content: "\2715";
+}
+
+.hamburger-btn[aria-expanded="true"] .menu-icon:nth-child(1) {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.hamburger-btn[aria-expanded="true"] .menu-icon:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-btn[aria-expanded="true"] .menu-icon:nth-child(3) {
+  transform: rotate(45deg) translate(-6px, -6px);
+}
+
+body > footer {
+  position: sticky;
+  top: 100vh;
+}
+
+footer {
+  width: 100%;
+  background-color: #7c272c;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.logo-final {
+  width: 150px;
+}
+
+.titulo-final {
+  grid-column: 1 / -1;
+  text-align: start;
+  padding: 15px 0;
+}
+
+.endereço {
+  padding: 15px 0;
+}
+
+.logo-sedac {
+  width: 30rem;
+  justify-self: end;
+  margin-top: -8rem;
+}
+
+
+/* Responsividade */
+
+/* Menu Mobile - apenas abaixo de 960px */
+@media (max-width: 959px) {
+     .hamburger-btn-js-enabled + .nav-lista {
+    display: flex;
+    position: fixed;
+    width: calc(100% - 2rem);
+    max-width: 400px;
+    right: 1rem;
+    top: 90px;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 0;
+    z-index: 999;
+  }
+
+  .hamburger-btn-js-enabled + .nav-lista .item {
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .hamburger-btn-js-enabled + .nav-lista .item:last-child {
+    border-bottom: none;
+  }
+
+  .hamburger-btn-js-enabled + .nav-lista .item a {
+    padding: 15px 20px;
+    display: block;
+    transition: all 0.3s ease;
+    color: #333;
+  }
+
+  .hamburger-btn-js-enabled + .nav-lista .item a:hover {
+    background-color: #7c272c;
+    color: #fff;
+    padding-left: 30px;
+  }
+
+  .hamburger-btn-js-enabled + .menu-closed {
+    display: none;
+  }
+
+  .hamburger-btn-js-enabled {
+    display: block;
+  }
+
+  .container-wrapper {
+    display: none;
+  }
+}
+
+@media (min-width: 960px) {
+    .hamburger-btn {
+    display: none !important;
+  }
+  
+  .nav-site {
+    position: relative;
+  }
+
+  .nav-lista {
+    position: static !important;
+    display: flex !important;
+    flex-direction: row;
+    width: auto;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem;
+    gap: 1.5rem;
+    background-color: #7c272c;
+    box-shadow: none;
+    border-radius: 0;
+    max-width: none;
+  }
+
+  .nav-lista .item {
+    border-bottom: none;
+  }
+
+  .nav-lista .item a {
+    color: #fff;
+    padding: 10px;
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .nav-lista .item a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #f3c716;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  .nav-lista .item a:hover {
+    color: #f3c716;
+    background-color: transparent;
+    padding: 10px;
+  }
+
+  .nav-lista .item a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  .container-wrapper {
+    background-color: #7c272c;
+    display: flex;
+    align-items: center;
+  }
+
+  .input-wrapper {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 60px;
+    transition: 0.5s;
+    overflow: hidden;
+  }
+
+  .input-wrapper .input {
+    display: flex;
+    position: relative;
+    height: 40px;
+    width: 300px;
+    left: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .input-wrapper input {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    padding: 10px 0;
+    display: block;
+  }
+
+  .input-wrapper input:focus-visible {
+    outline: none;
+  }
+
+  .input-wrapper.active {
+    width: 360px;
+    background-color: #fff;
+  }
+
+  svg {
+    padding: 12px;
+    height: 45px;
+    width: 45px;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: #7c272c;
+    position: absolute;
+    right: -2px;
+    top: 48%;
+    transform: translateY(-50%);
+  }
+}
+
+@media (max-width: 2000px) and (min-width: 1201px) {
+    .logo-inicial {
+    width: 100px;
+    margin: auto;
+    padding: 0.5rem;
+  }
+  .logo-final {
+  width: 100px;
+}
+}
+
+@media (max-width: 960px) {
+     header {
+    justify-content: space-between;
+    position: static;
+    width: 100%;
+  }
+  .logo-inicial {
+    width: 120px;
+    margin: 10px;
+    padding: 0.5rem;
+  }
+  .input-wrapper, 
+  .input, 
+  input,
+  svg {
+    display: none;
+  }
+  footer {
+  padding: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+.logo-final {
+  width: 120px;
+}
+.titulo-final {
+  font-size: 20px;
+}
+.endereço {
+  padding: 5px 0;
+}
+.endereço li{
+  font-size: 15px;
+}
+.logo-sedac {
+  width: 100%;
+  justify-self: end;
+  margin-top: -8rem;
+}
+}
+
+@media (max-width: 600px) {
+    .logo-inicial {
+    width: 80px;
+  }
+  .logo-final {
+    width: 60px;
+  }
+  .titulo-final {
+  font-size: 13px;
+  line-break: loose;
+  padding: 4px 0;
+}
+.endereço li{
+  font-size: 10px;
+}
+.logo-sedac {
+  width: 100%;
+  justify-self: end;
+  margin-top: -5rem;
+}
+}
