@@ -1,0 +1,88 @@
+@import url(./styles/header.css);
+@import url(./styles/footer.css);
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  padding-top: 100px;
+  background-color: beige;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, ul, li {
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}
+
+a,
+ul,
+li {
+  text-decoration: none;
+  font-size: 20px;
+}
+
+ul {
+  padding: 0px;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.img-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  align-items: center;
+}
+
+.sm-botao {
+  background-color: #fff;
+  color: #7c272c;
+  border-radius: 60px;
+  border: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.sm-botao:hover {
+  background-color: #f3c716;
+}
+
+.memorial-img {
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./assets/img/MemorialDoRioGrandeDoSul_Wikimedia\ Commons_Ricardo\ André\ Frantz.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+/* Menu Mobile - apenas abaixo de 960px */
+@media (max-width: 960px) {
+   body {
+    padding-top: 0;
+   }
+  .img-container h1 {
+    font-size: 1.5rem;
+  }
+  .sm-botao {
+    font-size: 15px;
+  }
+}

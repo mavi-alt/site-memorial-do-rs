@@ -1,0 +1,82 @@
+body > footer {
+  position: sticky;
+  top: 100vh;
+}
+
+footer {
+  width: 100%;
+  background-color: #7c272c;
+  color: #fff;
+  padding: 1rem 6rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.logo-final {
+  margin: .5rem;
+  width: 100px;
+}
+
+.titulo-final {
+  grid-column: 1 / -1;  
+  text-align: start;
+  font-size: 1rem;
+  padding: 6px 0;
+}
+
+.endereço {
+  padding: 6px 0;
+}
+
+.endereço li {
+  font-size: 1rem;
+}
+
+.logo-sedac {
+  width: 30rem;
+  justify-self: right;
+  margin-top: -10rem;
+}
+
+@media (max-width: 960px) {
+  footer {
+  padding: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+.logo-final {
+  width: 120px;
+}
+.titulo-final {
+  font-size: 20px;
+}
+.endereço {
+  padding: 5px 0;
+}
+.endereço li{
+  font-size: 15px;
+  }
+.logo-sedac {
+  width: 100%;
+  justify-self: end;
+  margin-top: -8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo-final {
+    width: 60px;
+  }
+  .titulo-final {
+  font-size: 13px;
+  line-break: loose;
+  padding: 4px 0;
+  }
+.endereço li{
+  font-size: 10px;
+  }
+.logo-sedac {
+  width: 100%;
+  justify-self: end;
+  margin-top: -5rem;
+  }
+}

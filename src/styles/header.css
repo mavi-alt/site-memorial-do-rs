@@ -1,49 +1,3 @@
-/*
-Theme: Memorial do Rio Grande do Sul
-Author:  Manuela V. Almeida
-Description: Site institucional do Memorial do Rio Grande do Sul, com informações sobre a história, cultura e eventos relacionados ao estado. O site apresenta uma navegação intuitiva, design responsivo e conteúdo atualizado para promover o conhecimento e a valorização do patrimônio cultural gaúcho.
- */
-
- @import url(./header.css);
-
-* {
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  min-height: 100vh;
-  padding-top: 100px;
-  background-color: beige;
-}
-
-h1, h2, h3, h4, h5, h6, p, a, ul, li {
-  padding: 0;
-}
-
-a {
-  color: inherit;
-}
-
-a,
-ul,
-li {
-  text-decoration: none;
-  font-size: 20px;
-}
-
-ul {
-  padding: 0px;
-  list-style: none;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
 header {
   display: flex;
   justify-content: space-between;
@@ -59,19 +13,8 @@ header {
 }
 
 .logo-inicial {
-  width: 150px;
-  margin: 1rem;
-  padding: 1rem;
-}
-
-/* Navegação */
-
-.nav-site {
-  position: static;
-}
-
-.nav-lista {
-  justify-content: center;
+  width: 100px;
+  margin-left: 6rem;
 }
 
 .item a {
@@ -130,80 +73,11 @@ header {
   transform: rotate(45deg) translate(-6px, -6px);
 }
 
-body > footer {
-  position: sticky;
-  top: 100vh;
-}
-
-footer {
-  width: 100%;
-  background-color: #7c272c;
-  color: #fff;
-  padding: 1rem 2rem;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-}
-
-.logo-final {
-  width: 150px;
-}
-
-.titulo-final {
-  grid-column: 1 / -1;
-  text-align: start;
-  padding: 15px 0;
-}
-
-.endereço {
-  padding: 15px 0;
-}
-
-.logo-sedac {
-  width: 30rem;
-  justify-self: end;
-  margin-top: -8rem;
-}
-
-.img-container {
-  display: flex;
-  flex-direction: column;
-  gap: 6rem;
-  align-items: center;
-}
-
-.sm-botao {
-  background-color: #fff;
-  color: #7c272c;
-  border-radius: 60px;
-  border: none;
-  padding: 10px 20px;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.sm-botao:hover {
-  background-color: #f3c716;
-}
-
-.memorial-img {
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./img/MemorialDoRioGrandeDoSul_Wikimedia\ Commons_Ricardo\ André\ Frantz.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 400px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-}
-
-/* Responsividade */
-
-/* Menu Mobile - apenas abaixo de 960px */
 @media (max-width: 959px) {
-     .hamburger-btn-js-enabled + .nav-lista {
+  header {
+    align-items: center;
+  }
+   .hamburger-btn-js-enabled + .nav-lista {
     display: flex;
     position: fixed;
     width: calc(100% - 2rem);
@@ -255,7 +129,7 @@ footer {
 }
 
 @media (min-width: 960px) {
-    .hamburger-btn {
+      .hamburger-btn {
     display: none !important;
   }
   
@@ -376,22 +250,8 @@ footer {
   }
 }
 
-@media (max-width: 2000px) and (min-width: 1201px) {
-  .logo-inicial {
-    width: 100px;
-    margin: auto;
-    padding: 0.5rem;
-  }
-  .logo-final {
-  width: 100px;
-}
-}
-
 @media (max-width: 960px) {
-   body {
-    padding-top: 0;
-  }
-  header {
+    header {
     justify-content: space-between;
     position: static;
     width: 100%;
@@ -407,53 +267,10 @@ footer {
   svg {
     display: none;
   }
-  .img-container h1 {
-    font-size: 1.5rem;
-  }
-  .sm-botao {
-    font-size: 15px;
-  }
-  footer {
-  padding: 1rem;
-  grid-template-columns: 1fr 1fr;
-}
-.logo-final {
-  width: 120px;
-}
-.titulo-final {
-  font-size: 20px;
-}
-.endereço {
-  padding: 5px 0;
-}
-.endereço li{
-  font-size: 15px;
-}
-.logo-sedac {
-  width: 100%;
-  justify-self: end;
-  margin-top: -8rem;
-}
 }
 
 @media (max-width: 600px) {
-  .logo-inicial {
+    .logo-inicial {
     width: 80px;
   }
-  .logo-final {
-    width: 60px;
-  }
-  .titulo-final {
-  font-size: 13px;
-  line-break: loose;
-  padding: 4px 0;
-}
-.endereço li{
-  font-size: 10px;
-}
-.logo-sedac {
-  width: 100%;
-  justify-self: end;
-  margin-top: -5rem;
-}
 }
