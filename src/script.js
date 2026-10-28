@@ -57,3 +57,4 @@ function handleMediaqueryChange(e){
 
 mediaQuery.addEventListener("change", handleMediaqueryChange);
 handleMediaqueryChange(mediaQuery);
+
